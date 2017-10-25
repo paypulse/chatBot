@@ -1,0 +1,41 @@
+D:\BotEx\GreatWall\GreatWall\obj\Debug\GreatWall.csproj.CoreCompileInputs.cache
+D:\BotEx\GreatWall\GreatWall\bin\Bot Application.dll.config
+D:\BotEx\GreatWall\GreatWall\bin\Bot Application.dll
+D:\BotEx\GreatWall\GreatWall\bin\Bot Application.pdb
+D:\BotEx\GreatWall\GreatWall\bin\Autofac.dll
+D:\BotEx\GreatWall\GreatWall\bin\Chronic.dll
+D:\BotEx\GreatWall\GreatWall\bin\Microsoft.Bot.Builder.Autofac.dll
+D:\BotEx\GreatWall\GreatWall\bin\Microsoft.Bot.Builder.dll
+D:\BotEx\GreatWall\GreatWall\bin\Microsoft.Bot.Connector.dll
+D:\BotEx\GreatWall\GreatWall\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+D:\BotEx\GreatWall\GreatWall\bin\Microsoft.Rest.ClientRuntime.dll
+D:\BotEx\GreatWall\GreatWall\bin\Microsoft.WindowsAzure.Configuration.dll
+D:\BotEx\GreatWall\GreatWall\bin\Newtonsoft.Json.dll
+D:\BotEx\GreatWall\GreatWall\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\BotEx\GreatWall\GreatWall\bin\System.Net.Http.Formatting.dll
+D:\BotEx\GreatWall\GreatWall\bin\System.Web.Http.dll
+D:\BotEx\GreatWall\GreatWall\bin\System.Web.Http.WebHost.dll
+D:\BotEx\GreatWall\GreatWall\bin\Autofac.xml
+D:\BotEx\GreatWall\GreatWall\bin\Microsoft.Bot.Builder.xml
+D:\BotEx\GreatWall\GreatWall\bin\Microsoft.Bot.Builder.Autofac.xml
+D:\BotEx\GreatWall\GreatWall\bin\Microsoft.Bot.Connector.xml
+D:\BotEx\GreatWall\GreatWall\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+D:\BotEx\GreatWall\GreatWall\bin\Microsoft.WindowsAzure.Configuration.xml
+D:\BotEx\GreatWall\GreatWall\bin\Newtonsoft.Json.xml
+D:\BotEx\GreatWall\GreatWall\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\BotEx\GreatWall\GreatWall\bin\System.Net.Http.Formatting.xml
+D:\BotEx\GreatWall\GreatWall\bin\System.Web.Http.xml
+D:\BotEx\GreatWall\GreatWall\bin\System.Web.Http.WebHost.xml
+D:\BotEx\GreatWall\GreatWall\bin\ar\Microsoft.Bot.Builder.resources.dll
+D:\BotEx\GreatWall\GreatWall\bin\cs\Microsoft.Bot.Builder.resources.dll
+D:\BotEx\GreatWall\GreatWall\bin\de-dE\Microsoft.Bot.Builder.resources.dll
+D:\BotEx\GreatWall\GreatWall\bin\en\Microsoft.Bot.Builder.resources.dll
+D:\BotEx\GreatWall\GreatWall\bin\es\Microsoft.Bot.Builder.resources.dll
+D:\BotEx\GreatWall\GreatWall\bin\fa\Microsoft.Bot.Builder.resources.dll
+D:\BotEx\GreatWall\GreatWall\bin\fr\Microsoft.Bot.Builder.resources.dll
+D:\BotEx\GreatWall\GreatWall\bin\ja\Microsoft.Bot.Builder.resources.dll
+D:\BotEx\GreatWall\GreatWall\bin\ru\Microsoft.Bot.Builder.resources.dll
+D:\BotEx\GreatWall\GreatWall\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+D:\BotEx\GreatWall\GreatWall\obj\Debug\GreatWall.csprojResolveAssemblyReference.cache
+D:\BotEx\GreatWall\GreatWall\obj\Debug\Bot Application.dll
+D:\BotEx\GreatWall\GreatWall\obj\Debug\Bot Application.pdb
