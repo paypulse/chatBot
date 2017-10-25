@@ -5,11 +5,14 @@ using Microsoft.Bot.Connector;
 
 namespace GreatWall.Dialogs
 {
+    
     [Serializable]
     public class RootDialog : IDialog<object>
     {
         public Task StartAsync(IDialogContext context)
         {
+
+
             context.Wait(MessageReceivedAsync);
 
             return Task.CompletedTask;
@@ -17,14 +20,25 @@ namespace GreatWall.Dialogs
 
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
         {
+           
+            await context.PostAsync("안녕하세요 신속배달 만리 장성 봇입니다. 주문하시려는 음식을 입력해 주세요");
+
+            context.Wait(SendWelcomeMessageAsync);
+        }
+
+
+        private async Task SendWelcomeMessageAsync(IDialogContext context, IAwaitable<object> result)
+        {
             var activity = await result as Activity;
 
-            string message = string.Format("{0}을 주문 하셨습니다. 감사합니다.",activity.Text);
-
-            // return our reply to the user
+            string message = string.Format("{0}을 주문하셨습니다. 감사합니다.", activity.Text);
             await context.PostAsync(message);
 
-            context.Wait(MessageReceivedAsync);
+            //context.Call(new NameDialog(),this.NameDialogResumeAfter);
+            //Recursive call, so we need to exit point. 
+            context.Wait(SendWelcomeMessageAsync);
         }
+
+
     }
 }
