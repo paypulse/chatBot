@@ -19,11 +19,10 @@ namespace GreatWall.Dialogs
         {
             var activity = await result as Activity;
 
-            // calculate something for us to return
-            int length = (activity.Text ?? string.Empty).Length;
+            string message = string.Format("{0}을 주문 하셨습니다. 감사합니다.",activity.Text);
 
             // return our reply to the user
-            await context.PostAsync($"You sent {activity.Text} which was {length} characters");
+            await context.PostAsync(message);
 
             context.Wait(MessageReceivedAsync);
         }
