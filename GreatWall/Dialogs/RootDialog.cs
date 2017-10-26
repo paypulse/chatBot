@@ -9,10 +9,10 @@ namespace GreatWall.Dialogs
     [Serializable]
     public class RootDialog : IDialog<object>
     {
+        string welcomeMessage = "안녕하세요 만리장성 봇 입니다. 1.주문, 2. FAQ 중에 선택하세요";
+
         public Task StartAsync(IDialogContext context)
         {
-
-
             context.Wait(MessageReceivedAsync);
 
             return Task.CompletedTask;
@@ -21,7 +21,7 @@ namespace GreatWall.Dialogs
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
         {
            
-            await context.PostAsync("안녕하세요 신속배달 만리 장성 봇입니다. 주문하시려는 음식을 입력해 주세요");
+            await context.PostAsync(welcomeMessage);
 
             context.Wait(SendWelcomeMessageAsync);
         }
@@ -31,12 +31,41 @@ namespace GreatWall.Dialogs
         {
             var activity = await result as Activity;
 
-            string message = string.Format("{0}을 주문하셨습니다. 감사합니다.", activity.Text);
-            await context.PostAsync(message);
+            //erase space text
+            string selected = activity.Text.Trim();
+            
+            if(selected =="1")
+            {
+                await context.PostAsync("음식 주문 메뉴 입니다. 원하시는 음식을 입력해 주십시오.");
+                
+                //other dialog call 
+                context.Call(new OrderDialog(), DialogResumeAfter);
+            }else if(selected == "2")
+            {
+                await context.PostAsync("FAQ서비스 입니다. 질문을 입력해 주십시오.");
+                context.Call(new FAQDialog(), DialogResumeAfter);
 
-            //context.Call(new NameDialog(),this.NameDialogResumeAfter);
-            //Recursive call, so we need to exit point. 
-            context.Wait(SendWelcomeMessageAsync);
+            }
+            else
+            {
+                await context.PostAsync("잘못 선택 하셨습니다. 다시 선택해 주십시오.");
+                context.Wait(SendWelcomeMessageAsync);
+            }
+
+        }
+
+        private async Task DialogResumeAfter(IDialogContext context, IAwaitable<string> result)
+        {
+            try
+            {
+                string message = await result;
+
+                await this.MessageReceivedAsync(context, result);
+            }
+            catch (TooManyAttemptsException)
+            {
+                await context.PostAsync("오류가 생겼습니다. 죄송합니다.");
+            }
         }
 
 

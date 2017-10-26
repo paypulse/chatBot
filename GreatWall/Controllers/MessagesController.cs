@@ -14,14 +14,17 @@ namespace GreatWall
         /// POST: api/Messages
         /// Receive a message from a user and reply to it
         /// </summary>
+        /// web 통신
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
             if (activity.Type == ActivityTypes.Message)
             {
+                /*new dialog is RootDialog(). so,RootDialog start first.*/
                 await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
             }
             else
             {
+                //except message. other things.
                 HandleSystemMessage(activity);
             }
             var response = Request.CreateResponse(HttpStatusCode.OK);
