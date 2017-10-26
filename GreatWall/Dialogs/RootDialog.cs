@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using System.Collections.Generic;
 
 namespace GreatWall.Dialogs
 {
@@ -23,6 +24,21 @@ namespace GreatWall.Dialogs
            
             await context.PostAsync(welcomeMessage);
 
+            var message = context.MakeMessage();
+            var actions = new List<CardAction>();
+
+            actions.Add(new CardAction() { Title ="1. 주문", Value ="1"});
+            actions.Add(new CardAction() { Title ="2. FAQ", Value ="2"});
+
+            message.Attachments.Add(
+                new HeroCard
+                {
+                    Title = "원하는 기능을 선택하세요",
+                    Buttons = actions
+                }.ToAttachment()
+            );
+
+            await context.PostAsync(message);
             context.Wait(SendWelcomeMessageAsync);
         }
 
@@ -34,11 +50,9 @@ namespace GreatWall.Dialogs
             //erase space text
             string selected = activity.Text.Trim();
             
-            if(selected =="1")
+            if(selected == "1")
             {
-                await context.PostAsync("음식 주문 메뉴 입니다. 원하시는 음식을 입력해 주십시오.");
-                
-                //other dialog call 
+                await context.PostAsync("음식 주문 메뉴 입니다. 원하시는 음식을 입력해 주십시오."); 
                 context.Call(new OrderDialog(), DialogResumeAfter);
             }else if(selected == "2")
             {
