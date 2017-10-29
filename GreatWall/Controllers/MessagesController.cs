@@ -20,6 +20,7 @@ namespace GreatWall
             if (activity.Type == ActivityTypes.Message)
             {
                 /*new dialog is RootDialog(). so,RootDialog start first.*/
+                //메세지가 들어 오면 root 다이얼 로그로 간다. 
                 await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
             }
             else
